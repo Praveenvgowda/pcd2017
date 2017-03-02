@@ -1,10 +1,10 @@
 #include<stdio.h>
 struct complex
 {
-      float real;
-      float img;
+      int real;
+      int img;
 };
-struct complex addcomplex (int n,struct complex a[n]) 
+struct complex add (int n,struct complex a[n]) 
 {
 struct complex c;
 c.real = 0;
@@ -18,14 +18,14 @@ int main()
 {
 struct complex a[10],c;
 int n;
-printf("enter number of complex number to be added\n");
+printf("enter number of complex numbers\n");
 scanf("%d",&n);
 for (int i=0;i<n;i++)
 {
 printf("enter real and imaginary part of complex number");
 scanf("%d%d",&a[i].real,&a[i].img);
 }
-c = add(a,n);
+c= add(n,a);
 printf("sum is = %d + i%d",c.real,c.img);
-return o;
+return 0;
 }
