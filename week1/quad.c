@@ -4,8 +4,8 @@ typedef struct
 {
 	float r1,r2;
 }roots;
-typedef struct 
-{
+
+typedef struct{
 	float real,imag;
 }complex;
 
@@ -51,8 +51,6 @@ float findroots(float a,float b,float c)
     	}
     	                return qd.r1;
                         return qd.r2;
-
- 
-}
+}    	
 
 
