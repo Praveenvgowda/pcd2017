@@ -1,33 +1,58 @@
-#include<stdio.h>
-#include<math.h>
+#include <stdio.h>
+#include <math.h>
+typedef struct
+{
+	float r1,r2;
+}roots;
+typedef struct 
+{
+	float real,imag;
+}complex;
+
+
+float findroots(float a,float b,float c);
 int main()
 {
-    float a,b,c,d,rpart,ipart,r1,r2;
-    //input the co-effecients of a,b and c.
-printf("\nenter three non-zero co_-effecients(a,b and c)of the quadratic equation:");
-scanf("%f%f%f", &a,&b,&c);
-//compute the discriminant.
-d = (b*b)-(4*a*c);
-printf("\nthe discriminant is : %f\n",d);
-//compute real and equal roots.
-if(d==0)
+	roots qd;
+        complex num;
+	float a,b,c;
+	printf("enter the coefficients of x^2, x and the constants");
+	scanf("%f%f%f",&a,&b,&c);
+	findroots(a,b,c);
+	printf("the roots of the quadratic equation are %f and %f",qd.r1,qd.r2);
+    	return 0;
+}
+float findroots(float a,float b,float c)
 {
- r1=r2=-b/(2.0*a);
-printf("\nroots are real and equal :\nr1=%f\nr2=%f\n\n",r1,r2);
+		roots qd;
+		complex num;
+		float d=(b*b)-(4*a*c);
+        if(d==0)
+        {              
+    	               qd.r1=(-b)/(2*a);
+    	   	       qd.r2=(-b)/(2*a);
+    	}
+    	
+    	else if(d>0)
+        {
+			qd.r1=(-b+sqrt(d))/(2*a);
+			qd.r2=(-b-sqrt(d))/(2*a);
+   	}
+    	
+    	else if(d<0)
+        {
+                        float i=sqrt(-1);
+    		        num.real=(-b)/(2*a);
+    		        num.imag=(sqrt(-d))/(2*a);
+    		
+    		        qd.r1=(num.real)+i*(num.imag);
+    		        qd.r2=(num.real)-i*(num.imag);
+    		
+    	}
+    	                return qd.r1;
+                        return qd.r2;
+
+ 
 }
-//compare real and distinct roots.
-else if (d>0)
-{
-   r1=(-b-(sqrt(d)))/(2.0*a);
-   r2=(-b+(sqrt(d)))/(2.0*a);
-printf("\nroots are real and distinct : \nr1=%f\nr2=%f\n\n",r1,r2);
-}
-//compute imaginary roots.
-else
-{ rpart=-b/(2.0*a);
-ipart = sqrt((-d))/(2.0*a);
-printf("\nroots are imaginary:\nr1=%f+i*%f\nr2=%f-i*%f\n\n",rpart,ipart,rpart,ipart);
-}
-return 0;
-}
+
 
