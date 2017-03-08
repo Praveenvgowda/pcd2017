@@ -23,7 +23,7 @@ float convertradians(float d)
 int main()
 {
 	  float degree,x,sum;
-	  printf("enter the degree/n");
+	  printf("enter the degree\n");
 	  scanf("%f",&degree);
 	  x=convertradians(degree);
 	  sum=computesin(x);
