@@ -17,6 +17,7 @@ int main()
     float a[15],x,r,sum;
     printf("enter the order\n");
     scanf("%d",&order);
+    printf("enter %d coeffecients of polynomial\n",order+1);
     for(i=0;i<=order;i++)
     {
         scanf("%f",&a[i]);
