@@ -28,3 +28,6 @@ int main()
     printf("value of poynomial of x is %f\n",r);
     return 0;
 }
+
+
+
